@@ -15,7 +15,7 @@ const Portfolio = async () => {
     <div className="container mx-auto p-8 pb-16">
       <section>
         <h1 className="text-4xl font-bold text-center mb-8">Portfolio</h1>
-        <p className="text-lg text-center mb-8">Here are some of my projects</p>
+        <p className="text-lg text-center mb-8">Here are some of my projectss</p>
         <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
           {portfolioPosts.map((post) => (
             <Card
