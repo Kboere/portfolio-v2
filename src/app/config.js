@@ -1,0 +1,1 @@
+export const reqUrl = 'http://wordpress.kevinboere.nl/wp-json/wp/v2';
