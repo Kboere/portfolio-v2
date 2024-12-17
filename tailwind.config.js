@@ -25,6 +25,61 @@ module.exports = {
       fontFamily: {
         'body': ['Avenir-Book', 'Avenir', 'sans-serif'],
       },
+      fontSize: {
+        display: ['4.5rem', { lineHeight: '5rem', fontWeight: 500 }],
+        mdisplay: [
+          '2.5rem',
+          {
+            lineHeight: '3.375rem',
+            fontWeight: 500,
+          },
+        ],
+        h1: ['3rem', { lineHeight: '3.625rem', fontWeight: 400 }],
+        h1m: [
+          '2rem',
+          {
+            lineHeight: '2.5rem',
+            fontWeight: 400,
+          },
+        ],
+        h2: ['2rem', { lineHeight: '2.375rem', fontWeight: 400 }],
+        h2m: [
+          '1.75rem',
+          {
+            lineHeight: '2.5rem',
+            fontWeight: 400,
+          },
+        ],
+        h3: ['1.5rem', { lineHeight: '1.75rem', fontWeight: 400, letterSpacing: '-0.05em', textTransform: 'uppercase' }],
+        h3m: ['1.25rem', { lineHeight: '1.5rem', fontWeight: 400 }],
+        h4: ['1.25rem', { lineHeight: '1.5rem', fontWeight: 600 }],
+        h5: ['1.125rem', { lineHeight: '1.375rem', fontWeight: 500 }],
+        h6: ['1rem', { lineHeight: '1rem', fontWeight: 400 }],
+        p: [
+          '1.0625rem',
+          { lineHeight: '1.5rem', letterSpacing: '0', fontWeight: 400 },
+        ],
+        pbig: ['1.25rem', { lineHeight: '1.875rem', fontWeight: 400 }],
+        psmall: [
+          '0.875rem',
+          { lineHeight: '1.25rem', letterSpacing: '0', fontWeight: 400 },
+        ],
+        caption: [
+          '0.75rem',
+          { lineHeight: '1.125rem', letterSpacing: '0', fontWeight: 400 },
+        ],
+      },
+      colors: {
+        primary: {
+          DEFAULT: '#FFFCEF',
+        },
+        secondary: {
+          DEFAULT: '#5a4e42',
+        },
+      },
+      width: {
+        'card': 'calc(100% - 1rem)',
+      },
       writingMode: {
         'sideways-lr': 'sideways-lr',
       },

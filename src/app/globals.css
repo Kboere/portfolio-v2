@@ -38,6 +38,9 @@ body {
   color: #5A4E42;
 }
 
+h3, .text-h3, .text-h3m{
+  text-transform: uppercase;
+}
 
 .bars::before {
 	--cal: calc(8.333333% - 1px);

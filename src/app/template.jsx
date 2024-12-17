@@ -9,7 +9,7 @@ export default function Template({ children }) {
         }, []);
     return(
         <div>
-            <div id="banner-1" className="min-h-screen bg-[#CFE2F2] z-10 fixed top-0 left-0 w-full"></div>
+            <div id="banner-1" className="min-h-screen bg-[#CFE2F2] z-20 fixed top-0 left-0 w-full"></div>
             {children}
         </div>
     )
