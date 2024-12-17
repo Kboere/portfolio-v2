@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        remotePatterns: [
-          {
-            protocol: 'http',
-            hostname: 'wordpress.kevinboere.nl',
-          },
-        ],
-      },
+  images: {
+      remotePatterns: [
+        {
+          protocol: 'http',
+          hostname: 'wordpress.kevinboere.nl',
+        },
+      ],
+    },
 };
 
 export default nextConfig;

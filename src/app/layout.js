@@ -9,6 +9,9 @@ export const metadata = {
 
 const RootLayout = ({ children }) => (
     <html lang="en">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+      </head>
       <body>
       <Header />
       {children}

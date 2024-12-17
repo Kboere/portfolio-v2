@@ -32,6 +32,36 @@
   }
 }
 
+html,
+body {
+  background-color: #FFFCEF;
+  color: #5A4E42;
+}
+
+
+.bars::before {
+	--cal: calc(8.333333% - 1px);
+	content: "";
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	/* 	mix-blend-mode: difference; */
+	background: repeating-linear-gradient(
+		to left,
+		rgba(245, 242, 235, 0) 0 var(--cal),
+		#c2c2c2 var(--cal) calc(var(--cal) + 1px)
+	);
+	--to-opacity: 0.5;
+	opacity: var(--to-opacity);
+  transform: rotate();
+}
+
 .card-overlay {
   background: linear-gradient(
     to bottom,
@@ -41,3 +71,99 @@
   bottom: 0;
   left: 0;
 }
+
+#darkmode {
+  display: block;
+  position: relative;
+  background: transparent;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid orange;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#darkmode.active > div {
+  position: absolute;
+  background-color: #5a4e42;
+  height: 30px;
+  width: 33px;
+  right: -2px;
+  top: 1.5px;
+  border-radius: 50%;
+  transform: rotate(62deg);
+}
+#darkmode.active {
+  border-color: #5a4e42;
+}
+#darkmode div {
+  display: block;
+  position: absolute;
+  background: orange;
+  border-color: orange;
+  height: 16px;
+  width: 16px;
+  right: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+  z-index: 2;
+}
+#darkmode:not(.active) div > span {
+  position: absolute;
+  width: 1.5px;
+  height: 5px;
+  background-color: orange;
+  top: -8px;
+  left: 46%;
+  transform-origin: 50% 16px;
+  border-radius: 10px;
+}
+#darkmode div > span:nth-child(1) {
+  transform: rotate(0deg);
+}
+#darkmode div > span:nth-child(2) {
+  transform: rotate(45deg);
+}
+#darkmode div > span:nth-child(3) {
+  transform: rotate(90deg);
+}
+#darkmode div > span:nth-child(4) {
+  transform: rotate(135deg);
+}
+#darkmode div > span:nth-child(5) {
+  transform: rotate(180deg);
+}
+#darkmode div > span:nth-child(6) {
+  transform: rotate(225deg);
+}
+#darkmode div > span:nth-child(7) {
+  transform: rotate(270deg);
+}
+#darkmode div > span:nth-child(8) {
+  transform: rotate(315deg);
+}
+
+svg{
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+}
+
+#Kevin_Boere_Portfolio {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+   transform: translate(50px, 100%);
+  opacity: 0;
+  transition: all .3s;
+  transition-delay: .3s;
+}
+
+#Kevin_Boere_Portfolio.show{
+  opacity: 1; 
+  left: 50%;
+  top: 50%;
+   transform: translate(110px, 100%);
+}
+

@@ -12,7 +12,39 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      container: {
+        center: true, 
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1280px',
+        },
+      },
+      fontFamily: {
+        'body': ['Avenir-Book', 'Avenir', 'sans-serif'],
+      },
+      writingMode: {
+        'sideways-lr': 'sideways-lr',
+      },
+      textOrientation: {
+        'sideways': 'sideways',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.writing-mode-sideways-lr': {
+          'writing-mode': 'sideways-lr',
+        },
+        '.text-orientation-sideways': {
+          'text-orientation': 'sideways',
+        },
+      };
+
+      addUtilities(newUtilities);
+    },
+  ],
 };
