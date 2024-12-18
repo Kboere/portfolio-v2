@@ -13,6 +13,11 @@ const RootLayout = ({ children }) => (
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
       </head>
       <body>
+      <div class="container-shapes">
+        <div class="shape-blob"></div>
+        <div class="shape-blob one"></div>
+        <div class="shape-blob two"></div>
+      </div>
       <Header />
       {children}
       <Footer />
