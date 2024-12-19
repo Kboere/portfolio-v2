@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const animLogo = () => {
+const AnimLogo = () => {
   useEffect(() => {
     const logo = document.getElementById("Kevin_Boere_Portfolio");
     const layerOne = document.querySelector("svg");
@@ -97,4 +97,4 @@ const animLogo = () => {
   );
 };
 
-export default animLogo;
+export default AnimLogo;
