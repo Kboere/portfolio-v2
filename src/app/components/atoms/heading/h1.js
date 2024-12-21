@@ -1,6 +1,6 @@
-const H1 = ({ title }) => {
+const H1 = ({ title, className = "" }) => {
     return (
-      <h1 className="font-heading text-h1">
+      <h1 className={`font-body text-display -tracking-widest uppercase ${className}`}>
         {title}
       </h1>
     );

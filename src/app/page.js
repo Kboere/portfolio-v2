@@ -1,29 +1,28 @@
 import { reqUrlAcf } from "./config";
-import Content from "./components/molecules/content";
+import HomeHero from "./components/organisms/home-hero";
+import HomeAbout from "./components/organisms/home-about";
 
 export default async function Home() {
-  // Fetch the data from the REST API
-  const response = await fetch(`${reqUrlAcf}/options/options`, {
-    cache: "no-store", 
+  const res = await fetch(`${reqUrlAcf}/options/options`, {
+    headers: {
+      "Cache-Control": "no-store",
+      Pragma: "no-cache",
+      Expires: "0",
+    },
   });
 
-  if (!response.ok) {
-    console.error("Failed to fetch ACF data");
-    return null;
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
   }
 
-  const data = await response.json();
-  const acfData = data.acf;
-
-  const { hero_home } = acfData;
+  const data = await res.json();
+  const homeData = data.acf?.hero_home || null;
+  const homeAboutData = data.acf?.over_sectie || null;
 
   return (
-    <section className="flex min-h-screen flex-col items-center justify-between p-24 z-20">
-      <div className="hero">
-        <Content 
-          title={hero_home?.titel} 
-        />
-      </div>
-    </section>
+    <>
+      <HomeHero homeData={homeData} />
+      <HomeAbout homeAboutData={homeAboutData} />
+    </>
   );
 }

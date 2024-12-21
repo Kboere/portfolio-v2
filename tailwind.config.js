@@ -14,6 +14,7 @@ module.exports = {
       },
       container: {
         center: true, 
+        padding: '1rem',
         screens: {
           sm: '640px',
           md: '768px',
@@ -26,7 +27,7 @@ module.exports = {
         'body': ['Avenir-Book', 'Avenir', 'sans-serif'],
       },
       fontSize: {
-        display: ['4.5rem', { lineHeight: '5rem', fontWeight: 500 }],
+        display: ['5rem', { lineHeight: '5.5rem', fontWeight: 500 }],
         mdisplay: [
           '2.5rem',
           {
@@ -50,10 +51,10 @@ module.exports = {
             fontWeight: 400,
           },
         ],
-        h3: ['1.5rem', { lineHeight: '1.75rem', fontWeight: 400, letterSpacing: '-0.05em', textTransform: 'uppercase' }],
-        h3m: ['1.25rem', { lineHeight: '1.5rem', fontWeight: 400 }],
-        h4: ['1.25rem', { lineHeight: '1.5rem', fontWeight: 600 }],
-        h5: ['1.125rem', { lineHeight: '1.375rem', fontWeight: 500 }],
+        h3: ['2.5rem', { lineHeight: '2.25rem', fontWeight: 400, letterSpacing: '-0.05em', textTransform: 'uppercase' }],
+        h3m: ['1.75rem', { lineHeight: '1.5rem', fontWeight: 400 }],
+        h4: ['2rem', { lineHeight: '2rem', fontWeight: 400 }],
+        h5: ['1.5rem', { lineHeight: '1.375rem', fontWeight: 500 }],
         h6: ['1rem', { lineHeight: '1rem', fontWeight: 400 }],
         p: [
           '1.0625rem',
@@ -75,6 +76,9 @@ module.exports = {
         },
         secondary: {
           DEFAULT: '#5a4e42',
+        },
+        background: {
+          DEFAULT: '#CFE2F2',
         },
       },
       width: {
