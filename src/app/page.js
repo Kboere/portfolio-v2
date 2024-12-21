@@ -5,7 +5,7 @@ import HomeAbout from "./components/organisms/home-about";
 export default async function Home() {
   const res = await fetch(`${reqUrlAcf}/options/options`, {
     headers: {
-      "Cache-Control": "no-store",
+      cache: "no-store",
       Pragma: "no-cache",
       Expires: "0",
     },

@@ -43,11 +43,11 @@ module.exports = {
             fontWeight: 400,
           },
         ],
-        h2: ['2rem', { lineHeight: '2.375rem', fontWeight: 400 }],
+        h2: ['3rem', { lineHeight: '3.25rem', fontWeight: 400 }],
         h2m: [
-          '1.75rem',
+          '2rem',
           {
-            lineHeight: '2.5rem',
+            lineHeight: '2rem',
             fontWeight: 400,
           },
         ],
