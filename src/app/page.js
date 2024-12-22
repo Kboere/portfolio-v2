@@ -1,6 +1,7 @@
 import { reqUrlAcf } from "./config";
 import HomeHero from "./components/organisms/home-hero";
 import HomeAbout from "./components/organisms/home-about";
+import ContactForm from "./components/organisms/contactForm";
 
 export default async function Home() {
   const res = await fetch(`${reqUrlAcf}/options/options`, {
@@ -23,6 +24,8 @@ export default async function Home() {
     <>
       <HomeHero homeData={homeData} />
       <HomeAbout homeAboutData={homeAboutData} />
+
+      <ContactForm />
     </>
   );
 }
