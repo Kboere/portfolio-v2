@@ -4,11 +4,13 @@ import HomeAbout from "./components/organisms/home-about";
 import ContactForm from "./components/organisms/contactForm";
 
 export default async function Home() {
-  const res = await fetch(`${reqUrlAcf}/options/options`, {
+  // Add timestamp to URL to avoid caching issues
+  const res = await fetch(`${reqUrlAcf}/options/options?timestamp=${new Date().getTime()}`, {
     headers: {
-      cache: "no-store",
-      Pragma: "no-cache",
-      Expires: "0",
+      cache: "no-store",  // Disable browser cache
+      Pragma: "no-cache",  // Disable legacy cache
+      Expires: "0",  // Expire immediately
+      'Cache-Control': 'no-cache, no-store',  // Prevent caching in any layer
     },
   });
 
@@ -19,13 +21,15 @@ export default async function Home() {
   const data = await res.json();
   const homeData = data.acf?.hero_home || null;
   const homeAboutData = data.acf?.over_sectie || null;
+  const homeContactData = data.acf?.home_contact || null;
+
+  console.log(homeContactData.titel_contact_form);
 
   return (
     <>
       <HomeHero homeData={homeData} />
       <HomeAbout homeAboutData={homeAboutData} />
-
-      <ContactForm />
+      <ContactForm homeContactData={homeContactData} />
     </>
   );
 }

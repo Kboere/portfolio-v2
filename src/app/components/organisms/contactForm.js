@@ -1,12 +1,15 @@
 'use client';
 import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
+import H2 from "./../atoms/heading/h2";
 
-export default function ContactForm() {
+export default function ContactForm({homeContactData}) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
+
+  console.log(homeContactData.titel_contact_form);
 
   // Initialize EmailJS with public key on component mount
   useEffect(() => {
@@ -39,7 +42,7 @@ export default function ContactForm() {
 
   return (
     <section className="container relative py-16 md:py-24">
-      <h1>Contact Us</h1>
+      <H2 title={homeContactData.titel_contact_form} />
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
