@@ -41,9 +41,10 @@ export default function ContactForm({homeContactData}) {
   };
 
   return (
-    <section className="container relative py-16 md:py-24">
-      <H2 title={homeContactData.titel_contact_form} />
-      <form onSubmit={handleSubmit}>
+    <section className="container grid grid-cols-12 relative py-16 md:py-40">
+      <H2 title={homeContactData.titel_contact_form} className='col-span-12 md:col-span-6 md:col-start-4 text-center ' />
+      <form onSubmit={handleSubmit} className='col-span-12 md:col-span-6 md:col-start-4'>
+        <div className='p-6 backdrop-filter backdrop-blur bg-opacity-30 bg-white'>
         <div>
           <label htmlFor="name">Name</label>
           <input
@@ -73,7 +74,9 @@ export default function ContactForm({homeContactData}) {
             required
           ></textarea>
         </div>
-        <button type="submit">Send Message</button>
+        </div>
+
+        <button className='btn btn-solid' type="submit">Send Message</button>
       </form>
       {status && <p>{status}</p>}
       </section>

@@ -75,6 +75,22 @@ h3, .text-h3, .text-h3m{
   left: 0;
 }
 
+.btn{
+  @apply py-3 px-10 rounded uppercase;
+
+  &.btn-solid{
+    @apply bg-secondary text-white;
+  }
+
+  &.btn-link{
+    @apply text-secondary underline hover:no-underline;
+  }
+
+  &.btn-solid-reverse{
+    @apply bg-white text-secondary;
+  }
+}
+
 #darkmode {
   display: block;
   position: relative;
