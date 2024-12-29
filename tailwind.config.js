@@ -14,10 +14,16 @@ module.exports = {
       },
       container: {
         center: true, 
-        padding: '1rem',
+        padding: {
+          DEFAULT: '1rem',
+          sm: '1rem',  
+          lg: '2.5rem', 
+          xl: '2.5rem',  
+          '2xl': '1rem', 
+        },
         screens: {
-          sm: '640px',
-          md: '768px',
+          sm: '100%',
+          md: '100%',
           lg: '1024px',
           xl: '1280px',
           '2xl': '1280px',
