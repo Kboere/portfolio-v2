@@ -76,10 +76,11 @@ h3, .text-h3, .text-h3m{
 }
 
 .btn{
-  @apply py-3 px-10 rounded uppercase;
+  @apply py-3 px-10 rounded uppercase transition-all duration-300 ease-in-out;
 
   &.btn-solid{
-    @apply bg-secondary text-white;
+    @apply bg-secondary text-white border-2 border-secondary;
+    @apply hover:bg-transparent hover:text-secondary;
   }
 
   &.btn-link{

@@ -42,42 +42,59 @@ export default function ContactForm({homeContactData}) {
 
   return (
     <section className="container grid grid-cols-12 relative py-16 md:py-40">
-      <H2 title={homeContactData.titel_contact_form} className='col-span-12 md:col-span-6 md:col-start-4 text-center ' />
-      <form onSubmit={handleSubmit} className='col-span-12 md:col-span-6 md:col-start-4'>
-        <div className='p-6 backdrop-filter backdrop-blur bg-opacity-30 bg-white'>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          ></textarea>
-        </div>
-        </div>
+      <H2 title={homeContactData.titel_contact_form} className='col-span-12 md:col-span-6 md:col-start-4 text-center mb-10' />
+      <form onSubmit={handleSubmit} className="col-span-12 md:col-span-6 md:col-start-4 flex flex-col items-center">
+      <div className="w-full p-6 backdrop-filter backdrop-blur bg-opacity-30 bg-white shadow-md rounded-md grid grid-cols-12 gap-6">
+    <div className="mb-4 text-secondary col-span-12 md:col-span-6">
+      <label htmlFor="name" className="block text-sm font-light">
+        Your Name
+      </label>
+      <input
+        type="text"
+        id="name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter your name"
+        required
+        className="mt-1 block w-full pr-3 py-2 border-b bg-transparent text-secondary border-secondary focus:outline-none focus:ring-secondary focus:border-secondary placeholder:text-secondary placeholder:text-lg"
+      />
+    </div>
+    <div className="mb-4 text-secondary col-span-12 md:col-span-6">
+      <label htmlFor="email" className="block text-sm font-light">
+        Email Address
+      </label>
+      <input
+        type="email"
+        id="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email address"
+        required
+        className="mt-1 block w-full pr-3 py-2 border-b bg-transparent text-secondary border-secondary focus:outline-none focus:ring-secondary focus:border-secondary placeholder:text-secondary placeholder:text-lg"
+      />
+    </div>
+    <div className="mb-4 text-secondary col-span-12">
+      <label htmlFor="message" className="block text-sm font-light">
+        Your Message
+      </label>
+      <textarea
+        id="message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        placeholder="Hi, I think I have a project for Company X. How soon can you hop on to discuss this?"
+        required
+        className="mt-1 block h-20 w-full pr-3 py-2 border-b bg-transparent text-secondary border-secondary focus:outline-none focus:ring-secondary focus:border-secondary placeholder:text-secondary placeholder:text-lg overflow-y-auto resize-none"
+      ></textarea>
+    </div>
+  </div>
+  <button
+    className="btn btn-solid mt-10"
+    type="submit"
+  >
+    Send
+  </button>
+</form>
 
-        <button className='btn btn-solid' type="submit">Send Message</button>
-      </form>
       {status && <p>{status}</p>}
       </section>
   );
