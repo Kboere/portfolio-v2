@@ -8,8 +8,8 @@ const HomeHero = ({ homeData }) => {
 
   return (
       <div className="relative grid grid-cols-12 pt-28 pb-12 lg:py-16 h-screen">
-        <section className="container grid grid-cols-12 col-span-12 relative z-10">
-          <div className="col-span-8">
+        <section className="container flex flex-col gap-10 md:grid grid-cols-12 col-span-12 relative z-10">
+          <div className="w-full sm:w-3/4 md:col-span-8">
             <H1 title={homeData.titel} />
           </div>
 
@@ -38,7 +38,7 @@ const HomeHero = ({ homeData }) => {
             </div>
           </div>
         </section>
-        <section className="absolute right-0 -bottom-20 h-[90vh]">
+        <section className="absolute right-0 -bottom-20 h-[60vh] md:h-[90vh]">
             <img
               className="h-full"
               src={homeData.afbeelding.url}
