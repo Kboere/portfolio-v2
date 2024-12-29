@@ -6,10 +6,21 @@ import TransitionLink from "./transitionLink";
 const Navigation = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check screen size on resize event and initial load
+  // check if windows size is mobile and add class to header
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
+      const header = document.getElementById('header');
+      const isMobileView = window.innerWidth <= 1024;
+
+      setIsMobile(isMobileView);
+
+      if (header) {
+        if (isMobileView) {
+          header.classList.add('is-mobile');
+        } else {
+          header.classList.remove('is-mobile');
+        }
+      }
     };
 
     window.addEventListener('resize', handleResize);
@@ -20,7 +31,29 @@ const Navigation = () => {
     };
   }, []);
 
-  // Handle click on mobile menu and toggle visibility
+  // Add class to header when scrolling
+   useEffect(() => {
+    const handleScroll = () => {
+      const header = document.getElementById('header');
+
+      if (header) {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); 
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Add class to navbar when mobile menu is clicked
   useEffect(() => {
     const navbar = document.getElementById('navbar');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -35,16 +68,11 @@ const Navigation = () => {
       }
     };
 
-    // Update navbar class on screen resize or initial load
     updateNavbarClass();
 
-    // Handle mobile menu click event to toggle 'show' class
     const handleMenuClick = () => {
       navbar.classList.toggle('show');
       header.classList.toggle('has-mobile-menu');
-
-      document.body.style.overflow = navbar.classList.contains('show') ? 'hidden' : 'auto';
-      console.log('clicked'); // Log the click
     };
 
     // Add event listener for mobile menu click
@@ -53,13 +81,8 @@ const Navigation = () => {
       mobileMenu.addEventListener('click', handleMenuClick); // Add new listener
     }
 
-    // Cleanup the event listener when the component unmounts or is updated
-    return () => {
-      if (mobileMenu) {
-        mobileMenu.removeEventListener('click', handleMenuClick);
-      }
-    };
-  }, [isMobile]); // Re-run effect when 'isMobile' state changes
+  }, [isMobile]);
+
 
   return (
     <nav className="w-full lg:w-fit lg:mt-4 flex justify-between flex-row lg:flex-col h-full order-1 lg:order-2">

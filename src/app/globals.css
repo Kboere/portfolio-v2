@@ -34,37 +34,13 @@
 
 html,
 body {
-  background-color: #fffcef;
-  color: #5a4e42;
+  @apply bg-primary text-secondary;
 }
 
 h3,
 .text-h3,
 .text-h3m {
   text-transform: uppercase;
-}
-
-.bars::before {
-  --cal: calc(8.333333% - 1px);
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  /* 	mix-blend-mode: difference; */
-  background: repeating-linear-gradient(
-    to left,
-    rgba(245, 242, 235, 0) 0 var(--cal),
-    #c2c2c2 var(--cal) calc(var(--cal) + 1px)
-  );
-  --to-opacity: 0.5;
-  opacity: var(--to-opacity);
-  transform: rotate();
 }
 
 .card-overlay {
@@ -96,51 +72,23 @@ h3,
 }
 
 #darkmode {
-  display: block;
-  position: relative;
-  background: transparent;
-  border-radius: 40px;
-  width: 40px;
-  height: 40px;
-  border: 2px solid orange;
-  cursor: pointer;
+  @apply block relative bg-transparent rounded-full w-10 h-10 border-2 border-secondary cursor-pointer;
   transition: all 0.3s;
 }
 #darkmode.active > div {
-  position: absolute;
-  background-color: #5a4e42;
-  height: 30px;
-  width: 33px;
-  right: -2px;
-  top: 1.5px;
-  border-radius: 50%;
+  @apply absolute bg-secondary h-7 w-8 -right-[2px] top-[1.5px] rounded-full;
   transform: rotate(62deg);
 }
 #darkmode.active {
-  border-color: #5a4e42;
+  @apply border-secondary;
 }
 #darkmode div {
-  display: block;
-  position: absolute;
-  background: orange;
-  border-color: orange;
-  height: 16px;
-  width: 16px;
-  right: 50%;
-  top: 50%;
-  border-radius: 50%;
+  @apply block absolute bg-secondary border-secondary h-4 w-4 top-1/2 right-1/2 rounded-full z-[2];
   transform: translate(50%, -50%);
-  z-index: 2;
 }
 #darkmode:not(.active) div > span {
-  position: absolute;
-  width: 1.5px;
-  height: 5px;
-  background-color: orange;
-  top: -8px;
-  left: 46%;
+  @apply absolute w-[1.5px] h-[5px] bg-secondary -top-2 left-[46%] rounded-[10px];
   transform-origin: 50% 16px;
-  border-radius: 10px;
 }
 #darkmode div > span:nth-child(1) {
   transform: rotate(0deg);
@@ -186,8 +134,8 @@ svg {
 }
 
 #svg_logo {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 }
 
 #Kevin_Boere_Portfolio.show {
@@ -195,6 +143,12 @@ svg {
   left: 50%;
   top: 50%;
   transform: translate(110px, 100%);
+}
+
+#header{
+  img{
+    @apply w-10 h-10;
+  }
 }
 
 #mobile-menu {
@@ -205,8 +159,8 @@ svg {
   }
 }
 
-.has-mobile-menu {
-  @apply bg-secondary text-white h-screen transition-all duration-500 ease-in-out z-30;
+.is-mobile.scrolled {
+  @apply bg-secondary text-white h-[4.5rem] fixed top-0 w-full transition-all duration-300 ease-in z-30;
 
   #mobile-menu {
     & span {
@@ -234,10 +188,47 @@ svg {
   }
 }
 
+.has-mobile-menu {
+  @apply bg-secondary text-white h-screen transition-all duration-500 ease-in-out z-30;
+
+  #mobile-menu {
+    & span {
+      @apply bg-white;
+    }
+
+    & span:first-of-type {
+      transform: rotate(45deg) translate(2px, 2px);
+    }
+
+    & span:last-of-type {
+      transform: rotate(-45deg) translate(2px, -2px);
+    }
+  }
+
+  #svg_logo path {
+    @apply fill-white;
+  }
+
+  #darkmode {
+    @apply border-white;
+    div {
+      @apply bg-white border-white;
+
+      span {
+        @apply bg-white;
+      }
+    }
+  }
+
+  img {
+    @apply filter invert brightness-0;
+  }
+}
+
 .mobile-menu {
   @apply -top-[100vh] bg-secondary text-white absolute w-screen h-screen -ml-4 p-4 transition-all duration-300 ease-in-out flex-col items-center content-center gap-4;
   &.show {
-    @apply flex top-28;
+    @apply flex top-16;
 
     li {
       @apply py-4 px-8 backdrop-filter backdrop-blur bg-opacity-30 bg-white rounded-lg text-center;
