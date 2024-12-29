@@ -27,9 +27,7 @@ const AnimLogo = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="249"
-      height="65"
-      viewBox="0 0 249 65"
+      id="svg_logo"
     >
       <g id="Group_8" data-name="Group 8" transform="translate(-50 -34)">
         <text

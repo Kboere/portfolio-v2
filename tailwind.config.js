@@ -89,6 +89,7 @@ module.exports = {
       },
       width: {
         'card': 'calc(100% - 1rem)',
+        'mobile-nav': 'calc(100% - 72px)',
       },
       writingMode: {
         'sideways-lr': 'sideways-lr',

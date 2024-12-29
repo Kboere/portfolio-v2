@@ -178,6 +178,13 @@ svg{
   opacity: 0;
   transition: all .3s;
   transition-delay: .3s;
+
+  @apply hidden lg:block;
+}
+
+#svg_logo{
+  width: 60px;
+  height: 60px;
 }
 
 #Kevin_Boere_Portfolio.show{
@@ -187,6 +194,28 @@ svg{
    transform: translate(110px, 100%);
 }
 
+#mobile-menu{
+  @apply flex lg:hidden flex-col justify-center items-center gap-1 h-11 w-8 right-4;
+
+  & span{
+    @apply w-8 h-[2px] rounded-full bg-secondary text-transparent overflow-hidden;
+  }
+}
+
+.mobile-menu{
+  @apply -top-[100vh] bg-secondary text-white absolute w-screen h-screen -ml-4 p-4 transition-all;
+  &.show{
+    @apply block top-16;
+  }
+
+  & .li{
+    @apply py-2;
+
+    & a{
+      @apply text-white uppercase;
+    }
+  }
+}
 
 .container-shapes {
   min-height: 100vh;

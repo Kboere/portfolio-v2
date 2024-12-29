@@ -52,7 +52,7 @@ const CurrentTimeAndWeather = () => {
   }, []);
 
   return (
-    <div className="text-center flex flex-col items-end	">
+    <div className="hidden lg:flex text-center flex-col items-end	">
       {temperature !== null ? (
         <p className="text-sm font-medium">{temperature}°C Netherlands</p>
       ) : (
