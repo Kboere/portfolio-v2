@@ -39,7 +39,7 @@ const HomeHero = ({ homeData }) => {
             </div>
           </div>
         </section>
-        <section className="absolute right-0 bottom-0 h-[80vh]">
+        <section className="absolute right-0 -bottom-20 h-[90vh]">
             <img
               className="h-full"
               src={homeData.afbeelding.url}

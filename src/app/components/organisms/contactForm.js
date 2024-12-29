@@ -9,8 +9,6 @@ export default function ContactForm({homeContactData}) {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
 
-  console.log(homeContactData.titel_contact_form);
-
   // Initialize EmailJS with public key on component mount
   useEffect(() => {
     emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID);

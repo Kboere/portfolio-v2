@@ -5,7 +5,7 @@ import DarkmodeToggle from "./organisms/darkmode";
 import Logo from "./atoms/logo";
 
 const Header = () => (
-    <><header className="fixed p-4 flex flex-col flex-nowrap h-[100vh] z-10">
+    <><header className="fixed p-4 flex flex-col flex-nowrap h-[100vh] z-20">
     <div className="w-fit">
       <TransitionLink href="/" label="Home">
         <Logo />
