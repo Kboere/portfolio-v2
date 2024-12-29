@@ -42,7 +42,7 @@ export default function ContactForm({homeContactData}) {
 
   return (
     <section className="container grid grid-cols-12 relative py-16 md:py-40">
-      <H2 title={homeContactData.titel_contact_form} className='col-span-12 md:col-span-6 md:col-start-4 text-center mb-10' />
+      <H2 title={homeContactData.titel_contact_form} className='col-span-12 md:col-span-6 md:col-start-4 text-center mb-10 capitalize' />
       <form onSubmit={handleSubmit} className="col-span-12 md:col-span-6 md:col-start-4 flex flex-col items-center">
       <div className="w-full p-6 backdrop-filter backdrop-blur bg-opacity-30 bg-white shadow-md rounded-md grid grid-cols-12 gap-6">
     <div className="mb-4 text-secondary col-span-12 md:col-span-6">
