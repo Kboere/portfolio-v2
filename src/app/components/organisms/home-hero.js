@@ -14,7 +14,7 @@ const HomeHero = ({ homeData }) => {
           </div>
 
           <div className="grid grid-cols-12 col-span-12 justify-between">
-            <div className="col-span-6 flex flex-col justify-end gap-4">
+            <div className="col-span-12 md:col-span-6 flex flex-col justify-end gap-4">
               <H4 title={homeData.titel_unlocking_skills} />
 
               {homeData.unlocking_skills &&

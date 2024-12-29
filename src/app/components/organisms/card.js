@@ -25,7 +25,7 @@ const Card = ({ title, description, thumbnail, btnLabel, slug, extra_class = '' 
             <span className='flex items-end p-4 inset-0 absolute text-primary bg-gradient-to-t from-secondary via-50% to-transparent z-10'>
                 <TransitionLink 
                     href={`/portfolio/${slug}`} 
-                    className={`flex justify-center items-center gap-3 font-body text-h3m md:text-h3`}
+                    className={`flex justify-center items-center gap-3 font-body text-h3m md:text-h3 font-semibold`}
                     label={btnLabel} 
                     icon="arrow_forward"
                 />

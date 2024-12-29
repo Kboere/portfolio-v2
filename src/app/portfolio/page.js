@@ -1,5 +1,7 @@
 import Card from "../components/organisms/card";
 import { reqUrl } from '../config';
+import { reqUrlAcf } from '../config';
+import ContactForm from "../components/organisms/contactForm";
 
 export const metadata = {
   title: "Kevin Boere | Portfolio",
@@ -20,8 +22,24 @@ const Portfolio = async () => {
         console.error('Error fetching portfolio posts:', error);
     }
 
+     const res = await fetch(`${reqUrlAcf}/options/options?timestamp=${new Date().getTime()}`, {
+        headers: {
+          cache: "no-store",  // Disable browser cache
+          Pragma: "no-cache",  // Disable legacy cache
+          Expires: "0",  // Expire immediately
+          'Cache-Control': 'no-cache, no-store',  // Prevent caching in any layer
+        },
+      });
+    
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
+      }
+
     // Define column spans for each card
     const columnSpans = ['md:col-span-6', 'md:col-span-6', '!aspect-square md:col-span-3', 'md:col-span-6', '!aspect-square md:col-span-3'];
+
+    const data = await res.json();
+    const homeContactData = data.acf?.home_contact || null;
 
     return (
         <div className="container mx-auto p-8 pb-16">
@@ -41,6 +59,8 @@ const Portfolio = async () => {
                     ))}
                 </div>
             </section>
+
+            <ContactForm homeContactData={homeContactData} />
         </div>
     );
 }

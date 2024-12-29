@@ -23,8 +23,6 @@ export default async function Home() {
   const homeAboutData = data.acf?.over_sectie || null;
   const homeContactData = data.acf?.home_contact || null;
 
-  console.log(homeContactData.titel_contact_form);
-
   return (
     <>
       <HomeHero homeData={homeData} />
