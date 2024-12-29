@@ -7,8 +7,7 @@ const HomeHero = ({ homeData }) => {
 //   console.log(homeData);
 
   return (
-    <>
-      <div className="relative grid grid-cols-12 py-6 md:py-16 h-screen">
+      <div className="relative grid grid-cols-12 pt-28 pb-12 lg:py-16 h-screen">
         <section className="container grid grid-cols-12 col-span-12 relative z-10">
           <div className="col-span-8">
             <H1 title={homeData.titel} />
@@ -47,7 +46,6 @@ const HomeHero = ({ homeData }) => {
             />
           </section>
       </div>
-    </>
   );
 };
 

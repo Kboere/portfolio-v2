@@ -34,60 +34,63 @@
 
 html,
 body {
-  background-color: #FFFCEF;
-  color: #5A4E42;
+  background-color: #fffcef;
+  color: #5a4e42;
 }
 
-h3, .text-h3, .text-h3m{
+h3,
+.text-h3,
+.text-h3m {
   text-transform: uppercase;
 }
 
 .bars::before {
-	--cal: calc(8.333333% - 1px);
-	content: "";
-	pointer-events: none;
-	position: absolute;
-	top: 0;
-	left: 50%;
-	bottom: 0;
-	transform: translateX(-50%);
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	/* 	mix-blend-mode: difference; */
-	background: repeating-linear-gradient(
-		to left,
-		rgba(245, 242, 235, 0) 0 var(--cal),
-		#c2c2c2 var(--cal) calc(var(--cal) + 1px)
-	);
-	--to-opacity: 0.5;
-	opacity: var(--to-opacity);
+  --cal: calc(8.333333% - 1px);
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* 	mix-blend-mode: difference; */
+  background: repeating-linear-gradient(
+    to left,
+    rgba(245, 242, 235, 0) 0 var(--cal),
+    #c2c2c2 var(--cal) calc(var(--cal) + 1px)
+  );
+  --to-opacity: 0.5;
+  opacity: var(--to-opacity);
   transform: rotate();
 }
 
 .card-overlay {
   background: linear-gradient(
-    to bottom,
-    transparent,
-    rgb(var(--background-end-rgb))
-  ) rgb(var(--background-start-rgb));
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
   bottom: 0;
   left: 0;
 }
 
-.btn{
+.btn {
   @apply py-3 px-10 rounded uppercase transition-all duration-300 ease-in-out;
 
-  &.btn-solid{
+  &.btn-solid {
     @apply bg-secondary text-white border-2 border-secondary;
     @apply hover:bg-transparent hover:text-secondary;
   }
 
-  &.btn-link{
+  &.btn-link {
     @apply text-secondary underline hover:no-underline;
   }
 
-  &.btn-solid-reverse{
+  &.btn-solid-reverse {
     @apply bg-white text-secondary;
   }
 }
@@ -164,7 +167,7 @@ h3, .text-h3, .text-h3m{
   transform: rotate(315deg);
 }
 
-svg{
+svg {
   position: relative;
   overflow: visible;
   cursor: pointer;
@@ -174,45 +177,74 @@ svg{
   position: absolute;
   left: 50%;
   top: 50%;
-   transform: translate(50px, 100%);
+  transform: translate(50px, 100%);
   opacity: 0;
-  transition: all .3s;
-  transition-delay: .3s;
+  transition: all 0.3s;
+  transition-delay: 0.3s;
 
   @apply hidden lg:block;
 }
 
-#svg_logo{
+#svg_logo {
   width: 60px;
   height: 60px;
 }
 
-#Kevin_Boere_Portfolio.show{
-  opacity: 1; 
+#Kevin_Boere_Portfolio.show {
+  opacity: 1;
   left: 50%;
   top: 50%;
-   transform: translate(110px, 100%);
+  transform: translate(110px, 100%);
 }
 
-#mobile-menu{
+#mobile-menu {
   @apply flex lg:hidden flex-col justify-center items-center gap-1 h-11 w-8 right-4;
 
-  & span{
+  & span {
     @apply w-8 h-[2px] rounded-full bg-secondary text-transparent overflow-hidden;
   }
 }
 
-.mobile-menu{
-  @apply -top-[100vh] bg-secondary text-white absolute w-screen h-screen -ml-4 p-4 transition-all;
-  &.show{
-    @apply block top-16;
+.has-mobile-menu {
+  @apply bg-secondary text-white h-screen transition-all duration-500 ease-in-out z-30;
+
+  #mobile-menu {
+    & span {
+      @apply bg-white;
+    }
   }
 
-  & .li{
-    @apply py-2;
+  #svg_logo path {
+    @apply fill-white;
+  }
 
-    & a{
-      @apply text-white uppercase;
+  #darkmode {
+    @apply border-white;
+    div {
+      @apply bg-white border-white;
+
+      span {
+        @apply bg-white;
+      }
+    }
+  }
+
+  img {
+    @apply filter invert brightness-0;
+  }
+}
+
+.mobile-menu {
+  @apply -top-[100vh] bg-secondary text-white absolute w-screen h-screen -ml-4 p-4 transition-all duration-300 ease-in-out flex-col items-center content-center gap-4;
+  &.show {
+    @apply flex top-28;
+
+    li {
+      @apply py-4 px-8 backdrop-filter backdrop-blur bg-opacity-30 bg-white rounded-lg text-center;
+
+      a {
+        @apply text-white uppercase underline hover:no-underline;
+      }
     }
   }
 }
