@@ -105,7 +105,7 @@ const Navigation = () => {
 
       <ul className='order-1 lg:order-2'>
         <li className="text-lg lg:writing-mode-sideways-lr lg:text-orientation-sideways [>a]:mix-blend-darken">
-          <TransitionLink href="/about-me" label="About me">
+          <TransitionLink href="/about" label="About me">
             <img className="w-fit" src="/images/dots.svg" alt="Logo" />
           </TransitionLink>
         </li>

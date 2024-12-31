@@ -3,6 +3,11 @@ import HomeHero from "./components/organisms/home-hero";
 import HomeAbout from "./components/organisms/home-about";
 import ContactForm from "./components/organisms/contactForm";
 
+export const metadata = {
+  title: "Kevin Boere",
+  description: "Headless WordPress with Next.js",
+};
+
 export default async function Home() {
   // Add timestamp to URL to avoid caching issues
   const res = await fetch(`${reqUrlAcf}/options/options?timestamp=${new Date().getTime()}`, {
