@@ -1,9 +1,7 @@
-import { reqUrl, reqUrlAcf } from '../config';
-import Card from '../components/organisms/card';
+import { reqUrlAcf } from '../config';
 import ContactForm from '../components/organisms/contactForm';
 import H1 from '../components/atoms/heading/h1';
 import P from '../components/atoms/p';
-import Filtering from '../components/molecules/filtering';
 
 export const metadata = {
   title: 'Kevin Boere | About me',
