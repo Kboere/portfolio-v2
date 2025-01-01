@@ -292,8 +292,8 @@ svg {
   height: 200px;
   width: 200px;
   border-radius: 30% 50% 20% 40%;
-  animation: transform 20s ease-in-out infinite both alternate,
-    movement_one 40s ease-in-out infinite both;
+  /* animation: transform 20s ease-in-out infinite both alternate,
+    movement_one 40s ease-in-out infinite both; */
   opacity: 0.3;
   position: absolute;
   left: 70%;
@@ -305,8 +305,8 @@ svg {
   left: -200px;
   top: -150px;
   transform: rotate(-180deg);
-  animation: transform 30s ease-in-out infinite both alternate,
-    movement_two 60s ease-in-out infinite both;
+  /* animation: transform 30s ease-in-out infinite both alternate,
+    movement_two 60s ease-in-out infinite both; */
 }
 
 .shape-blob.two {
@@ -315,8 +315,8 @@ svg {
   left: 500px;
   top: -150px;
   transform: rotate(-180deg);
-  animation: transform 30s ease-in-out infinite both alternate,
-    movement_two 60s ease-in-out infinite both;
+  /* animation: transform 30s ease-in-out infinite both alternate,
+    movement_two 60s ease-in-out infinite both; */
 }
 
 @keyframes transform {
