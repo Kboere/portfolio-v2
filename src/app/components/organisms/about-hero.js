@@ -8,10 +8,10 @@ const AboutHero = ({ aboutData }) => {
   const filePath = "/CV.pdf";
 
   return (
-    <section className="relative grid md:grid-cols-12 gap-20 md:gap-20 h-screen items-center">
-      <div className="w-full col-span-12 md:col-span-6">
+    <section className="relative grid grid-cols-1 md:grid-cols-12 gap-20 md:gap-20 md:h-screen items-center">
+      <div className="col-span-12 md:col-span-6">
         <img
-          className="w-full md:w-auto md:h-full object-contain"
+          className="w-auto h-[50vh] md:h-full object-contain"
           src={aboutData.afbeelding.url}
           alt={aboutData.afbeelding.alt}
         />
