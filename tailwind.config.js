@@ -87,6 +87,10 @@ module.exports = {
           DEFAULT: '#CFE2F2',
         },
       },
+      dropShadow: {
+        'blob': '0 0 15px rgba(22, 129, 255, 1)',
+        'blob-light': '0 0 15px rgba(254, 251, 237, 1)',
+      },
       width: {
         'card': 'calc(100% - 1rem)',
         'mobile-nav': 'calc(100% - 72px)',
