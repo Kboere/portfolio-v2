@@ -23,7 +23,6 @@ const HomeAbout = ({ homeAboutData }) => {
             <div className="col-span-12 mt-6 md:mt-10">
               <Buttons
                 buttons={homeAboutData?.buttons}
-                btn_style_1="btn-primary"
               />
             </div>
           </div>
