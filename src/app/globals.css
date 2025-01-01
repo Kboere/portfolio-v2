@@ -22,6 +22,57 @@
   }
 }
 
+body.bg-dark{
+  @apply bg-secondary text-primary;
+
+  .shape-blob{
+    @apply bg-primary;
+  }
+
+  #svg_logo{
+    path, text{
+      @apply !fill-primary;
+    }
+  }
+
+  #darkmode {
+    @apply border-primary;
+    div {
+      @apply bg-primary border-primary;
+
+      span {
+        @apply bg-primary;
+      }
+    }
+  }
+
+  #header img {
+    @apply filter invert brightness-0;
+  }
+
+  .btn {
+  
+    &.btn-solid {
+      @apply bg-primary text-secondary border-primary;
+      @apply hover:bg-transparent hover:text-primary;
+    }
+  
+    &.btn-link {
+      @apply text-primary;
+    }
+  
+    &.btn-solid-reverse {
+      @apply bg-white text-secondary;
+    }
+  }
+
+  footer{
+    img{
+      @apply filter invert brightness-0;
+    }
+  }
+}
+
 h3,
 .text-h3,
 .text-h3m {
@@ -115,7 +166,7 @@ svg {
   transition: all 0.3s;
   transition-delay: 0.3s;
 
-  @apply hidden lg:block;
+  @apply hidden lg:block opacity-0 absolute top-1/2 left-1/2 transition-all duration-300 ease-in-out;
 }
 
 #svg_logo {

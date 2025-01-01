@@ -1,20 +1,20 @@
 "use client";
 
-import { usePathname } from 'next/navigation'; // Import usePathname hook
+import { usePathname } from 'next/navigation';
 import Header from "./components/header";
 import Footer from "./components/footer";
 import "./globals.css";
 
 const RootLayout = ({ children }) => {
-  const pathname = usePathname(); // Get the current pathname
+  const pathname = usePathname();
 
   // Define default background color
-  let bgColor = 'bg-primary text-secondary'; // Default background color
+  let bgColor = 'bg-primary text-secondary';
   let blobs = 'blobs-primary';
 
-  // Check the pathname and set the background color accordingly
+  // Check the pathname and set custom class
   if (pathname === '/about') {
-    bgColor = 'bg-dark bg-secondary text-primary'; // Set custom color for the About page
+    bgColor = 'bg-dark';
     blobs = 'bg-dark';
   }
 
