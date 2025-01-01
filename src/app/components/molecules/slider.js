@@ -8,11 +8,16 @@ import H5 from '../atoms/heading/h5';
 const Slider = ({ slides }) => {
   return (
     <Swiper
-      modules={[Pagination, Autoplay]} // Use the Swiper modules
-      spaceBetween={50} // Space between slides
-      slidesPerView={1} // Number of slides to show at once
-      pagination={{ clickable: true }} // Enable pagination with clickable dots
-      autoplay={{ delay: 30000 }} // Set autoplay delay to 3 seconds
+      modules={[Pagination, Autoplay]}
+      spaceBetween={50} 
+      slidesPerView={1} 
+      pagination={{ 
+        clickable: true,
+        renderBullet: (index, className) => {
+            return `<span class="${className} custom-pagination-dot"></span>`;
+          },
+         }}
+      autoplay={{ delay: 30000 }}
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index}>
@@ -44,12 +49,15 @@ const Slider = ({ slides }) => {
             </div>
           ) : (
             // Render content when afbeeldingen is false
-            <div className="h-64 flex items-center justify-center bg-gray-200">
-              <p className="absolute text-white font-bold text-lg">{slide.slide.soft_skills.titel}</p>
+            <div className="flex flex-col gap-4">
+                <H5 title={slide.slide.soft_skills.titel} className="font-bold uppercase" />
+              
               <div
                 dangerouslySetInnerHTML={{
                   __html: slide.slide.soft_skills.soft_skilss,
                 }}
+
+                className='uppercase [&_ul]:space-y-1'
               />
             </div>
           )}

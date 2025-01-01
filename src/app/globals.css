@@ -22,15 +22,20 @@
   }
 }
 
-body.bg-dark{
+html {
+  scroll-behavior: smooth;
+}
+
+body.bg-dark {
   @apply bg-secondary text-primary;
 
-  .shape-blob{
+  .shape-blob {
     @apply bg-primary drop-shadow-blob-light;
   }
 
-  #svg_logo{
-    path, text{
+  #svg_logo {
+    path,
+    text {
       @apply !fill-primary;
     }
   }
@@ -51,23 +56,22 @@ body.bg-dark{
   }
 
   .btn {
-  
     &.btn-solid {
       @apply bg-primary text-secondary border-primary;
       @apply hover:bg-transparent hover:text-primary;
     }
-  
+
     &.btn-link {
       @apply text-primary;
     }
-  
+
     &.btn-solid-reverse {
       @apply bg-white text-secondary;
     }
   }
 
-  footer{
-    img{
+  footer {
+    img {
       @apply filter invert brightness-0;
     }
   }
@@ -178,8 +182,8 @@ svg {
   transform: translate(110px, 100%);
 }
 
-#header{
-  img{
+#header {
+  img {
     @apply w-10 h-10;
   }
 }
@@ -270,6 +274,13 @@ svg {
         @apply text-white uppercase underline hover:no-underline;
       }
     }
+  }
+}
+
+.swiper-pagination {
+  @apply !relative;
+  .swiper-pagination-bullet {
+    @apply !bg-primary;
   }
 }
 
