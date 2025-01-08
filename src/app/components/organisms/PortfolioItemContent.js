@@ -16,6 +16,7 @@ const imageStyle = {
 
 const PortfolioItemContent = ({ post, homeContactData }) => {
   const titleRef = useRef(null);
+  const imageRef = useRef(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
   
     // Opacity Effect
     gsap.fromTo(
-      titleRef.current,
+      [titleRef.current, imageRef.current],
       { opacity: 1 },
       {
         opacity: 0, 
@@ -59,13 +60,7 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
   return (
     <div className="p-8 pb-16 overflow-hidden">
       <section ref={sectionRef} className="h-screen flex flex-col items-center justify-center">
-        <h1 ref={titleRef} className="text-[90px] font-bold text-center mb-8">
-          {post.title.rendered}
-        </h1>
-      </section>
-
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 container mx-auto">
-        <section>
+      <div className="absolute" ref={imageRef}>
           <Image
             src={post.acf.large_image}
             alt="Portfolio Image"
@@ -75,7 +70,13 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
             placeholder="blur"
             blurDataURL="/images/dummy.png"
           />
-        </section>
+      </div>
+        <h1 ref={titleRef} className="text-[90px] font-bold text-center mb-8">
+          {post.title.rendered}
+        </h1>
+      </section>
+
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 container mx-auto">x
         <section>
           <p className="text-md font-semibold mb-1">Description</p>
           <p className="text-lg mb-8">{post.acf.desc_item}</p>
