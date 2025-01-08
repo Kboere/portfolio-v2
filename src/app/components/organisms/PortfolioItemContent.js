@@ -12,6 +12,7 @@ const imageStyle = {
   objectFit: "cover",
   width: "100%",
   height: "100%",
+  borderRadius: "20px",
 };
 
 const PortfolioItemContent = ({ post, homeContactData }) => {
@@ -37,6 +38,21 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
         },
       }
     );
+
+    gsap.fromTo(
+      imageRef.current,
+      { scale: 1 },
+      {
+        scale: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "bottom 100%",
+          end: "top -100%",
+          scrub: 3,
+        },
+      }
+    );
   
     // Opacity Effect
     gsap.fromTo(
@@ -47,7 +63,7 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
         ease: "power1.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top -20%", 
+          start: "top -30%", 
           end: "top -50%", 
           scrub: 1,
         },
@@ -59,8 +75,8 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
 
   return (
     <div className="p-8 pb-16 overflow-hidden">
-      <section ref={sectionRef} className="h-screen flex flex-col items-center justify-center">
-      <div className="absolute" ref={imageRef}>
+      <section ref={sectionRef} className="h-itemHero relative flex flex-col items-center justify-end mb-32">
+      <div className="absolute max-w-[1280px] w-[90%]" ref={imageRef}>
           <Image
             src={post.acf.large_image}
             alt="Portfolio Image"
@@ -71,12 +87,12 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
             blurDataURL="/images/dummy.png"
           />
       </div>
-        <h1 ref={titleRef} className="text-[90px] font-bold text-center mb-8">
+        <h1 ref={titleRef} className="text-[90px] text-center mb-8">
           {post.title.rendered}
         </h1>
       </section>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 container mx-auto">x
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 container mx-auto">
         <section>
           <p className="text-md font-semibold mb-1">Description</p>
           <p className="text-lg mb-8">{post.acf.desc_item}</p>

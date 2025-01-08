@@ -95,6 +95,9 @@ module.exports = {
         'card': 'calc(100% - 1rem)',
         'mobile-nav': 'calc(100% - 72px)',
       },
+      height: {
+        'itemHero': 'calc(100vh - 4rem)',
+      },
       writingMode: {
         'sideways-lr': 'sideways-lr',
       },
