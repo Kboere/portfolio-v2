@@ -26,6 +26,12 @@ html {
   scroll-behavior: smooth;
 }
 
+.text-stroke-border{
+  color: transparent;
+  -webkit-text-stroke-width: 1.5px ;
+  -webkit-text-stroke-color: #5a4e42;
+}
+
 body.bg-dark {
   @apply bg-secondary text-primary;
 
@@ -368,3 +374,4 @@ svg {
     transform: translate(50%, 20%) rotate(-200deg) scale(1.2);
   }
 }
+

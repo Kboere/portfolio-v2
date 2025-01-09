@@ -6,8 +6,6 @@ export const metadata = {
 };
 
 const PortfolioItems = async ({ params }) => {
-  console.log("params", params);
-
   const req = await fetch(
     `${reqUrl}/portfolio?acf_format=standard&_fields=id,slug,title,acf&slug=${params.slug}`,
     { cache: "no-store" } // Ensure fresh data
