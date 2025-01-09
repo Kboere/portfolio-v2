@@ -99,7 +99,7 @@ const Navigation = () => {
           <TransitionLink href="/portfolio" label="Projects" />
         </li>
         <li className="text-lg lg:writing-mode-sideways-lr lg:text-orientation-sideways">
-          <TransitionLink href="/#contact-form" label="Contact" />
+          <a href="#contact-form">Contact</a>
         </li>
       </ul>
 
