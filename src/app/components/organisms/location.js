@@ -1,15 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 const CurrentTimeAndWeather = () => {
   const [time, setTime] = useState("");
   const [temperature, setTemperature] = useState(null);
   const [error, setError] = useState(null);
-
-  // Your WeatherAPI key
-  const API_KEY = "270ff04d6ed642ac97a112730231003"; // Store the key in .env.local
 
   // Function to update the time
   const updateTime = () => {
@@ -28,7 +24,7 @@ const CurrentTimeAndWeather = () => {
     try {
       // Using WeatherAPI to get the current weather
       const response = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Amsterdam`
+        `https://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=Amsterdam`
       );
       const data = await response.json();
 
@@ -46,9 +42,9 @@ const CurrentTimeAndWeather = () => {
     // Fetch weather data
     fetchWeatherData();
     // Set interval to update the time every minute
-    const interval = setInterval(updateTime, 60000); // Update every minute
+    const interval = setInterval(updateTime, 60000);
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -56,7 +52,7 @@ const CurrentTimeAndWeather = () => {
       {temperature !== null ? (
         <p className="text-sm font-medium">{temperature}°C Netherlands</p>
       ) : (
-        <p className="texxt-sm text-red-500">{error}°C</p>
+        <p className="text-sm text-red-500">{error}°C</p>
       )}
 
       <p className="text-sm">{time}</p>

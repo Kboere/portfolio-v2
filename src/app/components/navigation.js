@@ -91,6 +91,7 @@ const Navigation = () => {
         <span>icon</span>
       </div>
 
+      {/* Navigation links */}
       <ul
         id="navbar"
         className="lg:relative lg:flex lg:mt-16 content-start flex-wrap flex-row lg:flex-col gap-12 order-2 lg:order-1"
@@ -103,6 +104,7 @@ const Navigation = () => {
         </li>
       </ul>
 
+    {/* About me section with logo */}
       <ul className='order-1 lg:order-2'>
         <li className="text-lg lg:writing-mode-sideways-lr lg:text-orientation-sideways [>a]:mix-blend-darken">
           <TransitionLink href="/about" label="About me">

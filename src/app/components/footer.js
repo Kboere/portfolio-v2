@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { reqUrlAcf } from "../config";
 import P from "./atoms/p";
 
 const Footer = async () => {
   // Fetch Footer Data
   let footerData = null;
   try {
-    const res = await fetch(`${reqUrlAcf}/options/options?timestamp=${new Date().getTime()}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_REQURL_ACF}/options/options?timestamp=${new Date().getTime()}`);
     if (!res.ok) throw new Error('Failed to fetch ACF options footer');
     const data = await res.json();
     footerData = data.acf?.social_media_icons || null;
@@ -37,6 +36,7 @@ const Footer = async () => {
           );
         })}
 
+      {/* copyright */}
       <P text={footerData?.copyright_titel} />
     </footer>
   );

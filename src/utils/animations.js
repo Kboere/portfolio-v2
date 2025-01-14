@@ -1,5 +1,8 @@
 import gsap from 'gsap';
 
+/**
+ * Animates the page in by sliding the banner out of view.
+ */
 export const animatePageIn = () => {
     const banner1 = document.getElementById('page-banner');
 
@@ -14,6 +17,11 @@ export const animatePageIn = () => {
     }
 };
 
+/**
+ * Animates the page out before navigating to a new page.
+ * @param {string} href - The URL to navigate to.
+ * @param {Function} onComplete - Callback function to execute after animation.
+ */
 export const animatePageOut = (href, onComplete) => {
     const banner1 = document.getElementById('page-banner');
 

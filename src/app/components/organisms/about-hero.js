@@ -18,7 +18,6 @@ const AboutHero = ({ aboutData }) => {
       </div>
       <div className="col-span-12 md:col-span-6 flex flex-col gap-4 md:gap-6">
         <div className="w-full p-6 backdrop-filter backdrop-blur bg-opacity-30 bg-white shadow-md rounded-md flex flex-col gap-4 md:gap-6">
-          {/* Slider */}
           <H1
             title={skills_sectie.titel}
             className="!text-h3 !text-h3m !tracking-normal uppercase"

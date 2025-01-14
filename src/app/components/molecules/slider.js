@@ -23,7 +23,6 @@ const Slider = ({ slides }) => {
         <SwiperSlide key={index}>
           {/* Check if "afbeeldingen" is true */}
           {slide.slide.afbeeldingen ? (
-            // Render content when afbeeldingen is true
             <div className="relative flex flex-col gap-4">
 
               <H5 title={slide.slide.titel_hard_skills} className="font-bold uppercase" />

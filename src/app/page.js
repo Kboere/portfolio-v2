@@ -1,4 +1,3 @@
-import { reqUrlAcf } from "./config";
 import HomeHero from "./components/organisms/home-hero";
 import HomeAbout from "./components/organisms/home-about";
 import ContactForm from "./components/organisms/contactForm";
@@ -8,25 +7,42 @@ export const metadata = {
   description: "Headless WordPress with Next.js",
 };
 
-export default async function Home() {
-  // Add timestamp to URL to avoid caching issues
-  const res = await fetch(`${reqUrlAcf}/options/options?timestamp=${new Date().getTime()}`, {
-    headers: {
-      cache: "no-store",  // Disable browser cache
-      Pragma: "no-cache",  // Disable legacy cache
-      Expires: "0",  // Expire immediately
-      'Cache-Control': 'no-cache, no-store',  // Prevent caching in any layer
-    },
-  });
+// Define cache control headers to prevent caching issues
+const FETCH_HEADERS = {
+  cache: "no-store",  // Ensure fresh data by preventing browser caching
+  Pragma: "no-cache",  // Legacy HTTP 1.0 cache control
+  Expires: "0",  // Forces expiration immediately
+  'Cache-Control': 'no-cache, no-store',  // Explicitly disable caching in all layers
+};
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+/**
+ * Fetch home page data from WordPress API.
+ * @returns {Promise<{ homeData: object, homeAboutData: object, homeContactData: object }>}
+ */
+async function fetchHomeData() {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_REQURL_ACF}/options/options?timestamp=${Date.now()}`, {
+      headers: FETCH_HEADERS,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return {
+      homeData: data.acf?.hero_home || null,
+      homeAboutData: data.acf?.over_sectie || null,
+      homeContactData: data.acf?.home_contact || null,
+    };
+  } catch (error) {
+    console.error("Error fetching home page data:", error);
+    return { homeData: null, homeAboutData: null, homeContactData: null };
   }
+}
 
-  const data = await res.json();
-  const homeData = data.acf?.hero_home || null;
-  const homeAboutData = data.acf?.over_sectie || null;
-  const homeContactData = data.acf?.home_contact || null;
+export default async function Home() {
+  const { homeData, homeAboutData, homeContactData } = await fetchHomeData();
 
   return (
     <>

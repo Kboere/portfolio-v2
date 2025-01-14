@@ -18,7 +18,7 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
   const containerRef = useRef(null);
   const imgRefs = useRef([]);
 
-  const galleryPhotos = post.acf.gallery_photos; // ✅ Ensure we get images from API
+  const galleryPhotos = post.acf.gallery_photos;
 
   useEffect(() => {
     if (!titleRef.current || !sectionRef.current || !containerRef.current || imgRefs.current.length < 3) return;
@@ -109,11 +109,13 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
   }, []);
 
   if (!galleryPhotos || galleryPhotos.length < 3) {
-    return <p>No images available</p>;
+    return;
   }
 
   return (
     <div className="pt-16">
+
+      {/* section for hero image */}
       <section
         ref={sectionRef}
         className="h-itemHero relative flex flex-col items-center justify-center p-8 pb-16 overflow-hidden"
@@ -140,6 +142,7 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
         </div>
       </section>
 
+      {/* section for info about project */}
       <section className="relative flex flex-col items-center">
         <Divider className="relative transform -scale-x-100 -scale-y-100 drop-shadow-[0_35px_35px_rgba(207,225,242,0.8)]" />
         <div className="w-full relative z-10 py-16 bg-background">
@@ -164,6 +167,7 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
         <Divider className="relative drop-shadow-[0_35px_35px_rgba(207,225,242,0.8)]" />
       </section>
 
+      {/* section for gallery */}
       <section ref={containerRef} className="grid-container py-24 md:py-40">
         <div className="grid container grid-cols-12 gap-6">
 
@@ -202,6 +206,7 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
         </div>
       </section>
 
+      {/* section for extra info */}
       <section className="relative flex flex-col items-center">
           <div className="container grid grid-cols-12 gap-8 md:gap-12">
             <div className="col-span-12 md:col-span-6 flex flex-col gap-4 md:gap-6 ">
@@ -227,7 +232,8 @@ const PortfolioItemContent = ({ post, homeContactData }) => {
             </div>
           </div>
       </section>
-
+      
+      {/* section for contact form */}
       <ContactForm homeContactData={homeContactData} />
     </div>
   );

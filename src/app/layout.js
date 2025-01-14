@@ -21,15 +21,10 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/swiper/swiper-bundle.min.css"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
       </head>
+
       <body className={`${bgColor}`}>
         <div className={`${blobs} container-shapes`}>
           <div className="shape-blob"></div>
@@ -37,7 +32,7 @@ const RootLayout = ({ children }) => {
           <div className="shape-blob two"></div>
         </div>
         <Header />
-        {children}
+          {children}
         <Footer />
       </body>
     </html>

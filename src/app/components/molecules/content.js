@@ -7,8 +7,6 @@ const Content = ({ title }) => (
         <div className="flex flex-col gap-4">
             <H1 title={title} />
         </div>
-
-
     </section>
 );
 

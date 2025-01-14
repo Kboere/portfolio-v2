@@ -5,7 +5,7 @@ import { animatePageOut } from "@/utils/animations";
 
 const TransitionLink = ({ href, className, label, children, icon }) => {
     const router = useRouter();
-    const pathname = router.asPath; // Get the current pathname
+    const pathname = router.asPath; 
 
     const handleClick = (e) => {
         // Do not handle page transitions if the user clicks on the same link
@@ -16,7 +16,7 @@ const TransitionLink = ({ href, className, label, children, icon }) => {
 
         // Handle page transitions if the page is different from the current page
         e.preventDefault();
-        animatePageOut(href); // Animate page out
+        animatePageOut(href);
     };
 
     return (

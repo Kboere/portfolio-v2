@@ -1,4 +1,3 @@
-import { reqUrlAcf } from '../config';
 import ContactForm from '../components/organisms/contactForm';
 import HeroAbout from '../components/organisms/about-hero';
 
@@ -7,11 +6,11 @@ export const metadata = {
 };
 
 const About = async () => {
-  // Fetch ACF options (contact form and other data)
+  // Fetch ACF options
   let contactData = null;
   let aboutData = null;
   try {
-    const res = await fetch(`${reqUrlAcf}/options/options?timestamp=${new Date().getTime()}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_REQURL_ACF}/options/options?timestamp=${new Date().getTime()}`, {
       headers: {
         cache: 'no-store',
         Pragma: 'no-cache',

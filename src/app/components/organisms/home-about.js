@@ -3,7 +3,6 @@ import Buttons from "../molecules/buttons";
 import Divider from "../atoms/divider";
 
 const HomeAbout = ({ homeAboutData }) => {
-  console.log(homeAboutData);
 
   const cleanContent = sanitizeHtml(homeAboutData?.content || "", {
     allowedTags: ["strong", "em", "b", "i", "p", "a", "br"], // Allow only these tags
