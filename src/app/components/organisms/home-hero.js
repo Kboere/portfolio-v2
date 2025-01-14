@@ -4,7 +4,6 @@ import H4 from "./../atoms/heading/h4";
 import P from "./../atoms/p";
 
 const HomeHero = ({ homeData }) => {
-//   console.log(homeData);
 
   return (
       <div className="relative grid grid-cols-12 pt-28 pb-12 lg:py-16 h-screen">
