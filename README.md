@@ -1,8 +1,7 @@
-# SRP portfolio 💻
-Dit is de repository van mijn portfolio voor een school opdracht. bekijk dit [document](https://docs.google.com/document/d/1FjTXWRKqR-BeaJ_1djine_HX7AOauZPXEihBmC6GBTw/edit?usp=sharing) voor meer inzichten over dit project
+# SRP portfolio document 💻
+Bekijk dit [document](https://docs.google.com/document/d/1FjTXWRKqR-BeaJ_1djine_HX7AOauZPXEihBmC6GBTw/edit?usp=sharing).
 
-
-# Uren logboek
+# SRP Uren logboek
 
 | **Project**                          | **Datum**      | **Uren** | **Extra opmerkingen**                                                                                                                                           |
 |--------------------------------------|----------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
