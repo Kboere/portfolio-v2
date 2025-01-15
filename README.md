@@ -1,3 +1,9 @@
+# SRP portfolio 💻
+Dit is de repository van mijn portfolio voor een school opdracht. bekijk dit [document](https://docs.google.com/document/d/1FjTXWRKqR-BeaJ_1djine_HX7AOauZPXEihBmC6GBTw/edit?usp=sharing) voor meer inzichten over dit project
+
+
+# Uren logboek
+
 | **Project**                          | **Datum**      | **Uren** | **Extra opmerkingen**                                                                                                                                           |
 |--------------------------------------|----------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Start van project, Opzetten Next.js en WP d.m.v. video volgen. Eerste fetch met WP REST API en data displayen. Opzetten Vercel en DNS settings.                      | 03-07-2024     | 7,25 uur | Zie commit geschiedenis: [Link](https://github.com/Kboere/portfolio-v2/commits/main/)                                                                            |
